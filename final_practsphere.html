@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practsphere Technologies</title>
+    <meta name="description" content="Practsphere is your trusted partner for career growth, offering advanced tech courses designed to prepare you for the fast-paced job market." />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+
+        body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: 
+        linear-gradient(270deg, 
+            #301157, /* Russian Violet */
+            #FFC412, /* Mikado Yellow */
+            #B4156E, /* Jazzberry Jam */
+            #053674, /* Ateneo Blue */
+            #389BB5, /* Moonstone */
+            #A4CE4F  /* Android Green */
+        ),
+        url('https://source.unsplash.com/1600x900/?technology,futuristic') no-repeat center center/cover;
+    background-size: 600% 600%, cover;
+    animation: waveBackground 15s ease-in-out infinite;
+    color: white;
+    text-align: center;
+}
+@keyframes waveBackground {
+    0% { background-position: 0% 50%, center; }
+    50% { background-position: 100% 50%, center; }
+    100% { background-position: 0% 50%, center; }
+}
+
+
+        .header {
+            background-color: #1D2B64;
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-left: 50px;
+        }
+        .nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 250px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1000;
+            color: black;
+        }
+        .dropdown-content div {
+            padding: 10px;
+            font-weight: bold;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            color: #1D2B64;
+            position: relative;
+        }
+        .dropdown-content div:hover {
+            background-color: #ccc;
+        }
+        .sub-list {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background: #ffffff;
+            min-width: 250px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1000;
+        }
+         .sub-list a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #1D2B64;
+            font-size: 14px;
+        }
+        .sub-list a img {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        .sub-list a:hover {
+            background-color: #d0d0d0;
+        }
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+        }
+         .dropdown-content div:hover .sub-list {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 100%;
+            top: 0;
+        }
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            padding: 10px;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background: #1D2B64;
+            position: absolute;
+            width: 100%;
+            top: 60px;
+            left: 0;
+            padding: 10px 0;
+        }
+        .mobile-nav button {
+            color: white;
+            padding: 10px 20px;
+            text-align: left;
+            width: 100%;
+            border: none;
+            background: none;
+        }
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .mobile-nav.active {
+                display: flex;
+            }
+            }
+            .container {
+            padding: 50px;
+            }
+            .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            }
+            .card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            }
+            .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+           }
+            h1 {
+            font-size: 2em;
+           }
+           footer {
+            background-color: #1D2B64;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+            position: relative;
+        }
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            background: white;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+        .carousel {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: scroll 15s linear infinite;
+        }
+        .carousel img {
+            height: 80px;
+            margin: 0 20px;
+        }
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <span style="font-weight:bold; font-size: 20px;">Practsphere Technologies</span>
+        <nav class="nav">
+            <button onclick="window.location.href='home page.html'">Home</button>
+
+            <div class="dropdown">
+                <button>MNCs Programs</button>
+                
+<div class="dropdown-content">
+    <div>Information Technology
+        <div class="sub-list">
+                    <a href="#">Full Stack Web Development</a>
+                    <a href="#">Android Development</a>
+                    <a href="#">Artificial Intelligence</a>
+                    <a href="#">Programming in Java</a>
+                    <a href="#">Machine Learning</a>
+                    <a href="#">Data Science</a>
+                    <a href="#">Data Analytics</a>
+                    <a href="#">Ui/Ux Design</a>
+                    <a href="#">Cyber Security</a>
+                    <a href="#">Cloud Computing</a>
+
+        </div>
+    </div>
+    <div>Management 
+
+        <div class="sub-list">
+            <a href="#">Business Analytics</a>
+            <a href="#">Digital Marketing</a>
+            <a href="#">HR</a>
+            <a href="#">Finance</a>
+            <a href="#">Fintech</a>
+            <a href="#">Stock Market</a>
+            <a href="#">Marketing</a>
+            <a href="#">Graphic Design</a>
+        </div>
+    </div>
+    <div>Medical 
+        <div class="sub-list">
+            <a href="#">Genetic Engineering</a>
+            <a href="#">Nano Technology</a>
+            <a href="#">Psychology</a>
+        </div>
+    </div>
+    <div>Civil 
+        <div class="sub-list">
+            <a href="#">STAAD PRO</a>
+            <a href="#">MATLAB</a>
+        </div>
+    </div>
+    <div>MECH 
+        <div class="sub-list">
+            <a href="#">Hybrid Electric Vehicle (HEV)</a>
+            <a href="#">Auto CAD</a>
+        </div>
+    </div>
+    <div>ECE 
+        <div class="sub-list">
+            <a href="#">IoT & Robotics</a>
+            <a href="#">Embedded Systems</a>
+        </div>
+    </div>
+    
+    </div>
+</div>
+
+</div>
+               
+            </div>
+            <button>About Us</button>
+<div class="dropdown">
+    <button>Contact</button>
+    <div class="dropdown-content">
+        <div>Contact Details
+            <div class="sub-list">
+                <a href="Mobile:+919220443900">
+                    <img src="https://cdn-icons-png.flaticon.com/128/724/724664.png"> +919220443900
+                </a>
+                <a href="https://www.instagram.com/practsphere?igsh=dGN4ZnZvaW9oYmxs" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png"> Instagram
+                </a>
+                <a href="https://www.linkedin.com/company/practsphere-technologies/" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1384/1384014.png"> LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="typing-effect">Explore Our Internship Domains</h1>
+
+        <head>
+  <meta charset="UTF-8">
+  <style>
+  .typing-effect {
+    font-family: "Times New Roman", Times, serif;
+    color: #FFFFFF;
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    animation: typing 4s steps(35, end), blink 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #4169E1 }
+  }
+</style>
+
+</head>
+
+
+
+        <div class="grid">
+            <div class="card"><img src="https://i.postimg.cc/mgrGqSXN/full-stack1200.png" alt="Full Stack Web Development"><h3>Full Stack Web Development</h3></div>
+             <div class="card"><img src="https://i.postimg.cc/6QRb12Xf/android-app-development-cost-factors.jpg" alt="Android Development"><h3>Android Development</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/rszS3342/the-4-top-artificial-intelligence-trends-for-2021.jpg" alt="Artificial Intelligence"><h3>Artificial Intelligence</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/76Z7JdmJ/What-is-machine-learning-Definition-types-jpg-optimal.jpg" alt="Machine Learning"><h3>Machine Learning</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/Hk07ZdN7/What-is-data-science-2.jpg" alt="Data Science"><h3>Data Science</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/pybpC6YZ/How-To-Take-Your-Data-Analytics-Approach-To-The-Next-Level-in-2023.jpg" alt="Data Analytics"><h3>Data Analytics</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/vBCrRXt1/cyber-security.png" alt="Cyber Security"><h3>Cyber Security</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/QdjprF1q/4-Pillars-of-Cloud-Computing-1.jpg" alt="Cloud Computing"><h3>Cloud Computing</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/sxFhHx37/iot-robotics.png" alt="IoT & Robotics"><h3>IoT & Robotics</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/4x4hSrRL/Embedded-systems.webp" alt="Embedded Systems"><h3>Embedded Systems</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/CLh1hkrd/Chat-GPT-Image-Mar-31-2025-04-43-00-AM.png" alt="Auto CAD"><h3>Auto CAD</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/HW4n1B2f/Digital-Marketing.jpg" alt="Digital Marketing"><h3>Digital Marketing</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/YCjCgkHH/What-does-finance-do.png" alt="Finance"><h3>Finance</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/d046f8fd/HR-core-functions-2023-960x540px-v3.webp" alt="HR"><h3>HR</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/y6Fj442s/Chat-GPT-Image-Mar-31-2025-05-16-13-AM.png" alt="Stock Market"><h3>Stock Market</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/43LMcksr/Business-Analytics-Challenges-Faced-by-Small-Businesses-jpg.webp" alt="Business Analytics"><h3>Business Analytics</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/KzCH9PKf/genetic-engineering.png" alt="Genetic Engineering / Nano Technology"><h3>Genetic Engineering / Nano Technology</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/sxS0bM7r/psychology-definition.jpg" alt="Psychology"><h3>Psychology</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/7Z4p8nKQ/Chat-GPT-Image-Mar-31-2025-05-07-44-AM.png" alt="Hybrid Electric Vehicle (HEV)"><h3>Hybrid Electric Vehicle (HEV)</h3></div>
+            <div class="card"><img src="https://i.postimg.cc/wT8rLkYT/marketing.jpg" alt="Marketing"><h3>Marketing</h3></div>
+        </div>
+    </div>
+    <style>
+  .blink-button {
+    background-color: #28a745;
+    color: white;
+    padding: 16px 32px; /* Increased padding */
+    border: none;
+    border-radius: 12px; /* Slightly more rounded */
+    font-size: 18px; /* Bigger text */
+    cursor: pointer;
+    animation: blink 0.5s infinite;
+  }
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+</style>
+
+<a href="https://forms.gle/NwfX6852cYjPoAWt7" target="_blank" style="text-decoration: none;">
+     <span>👉</span>
+ <button class="blink-button" onclick="window.location.href='index updated.html'">
+  Apply Now for an Internship
+</button>
+
+   <span>👈</span>
+   </button>
+</a>
+
+
+
+    <footer>
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+                <img src="https://i.postimg.cc/KvPN2RBw/wipro.png" alt="Wipro">
+                <img src="https://i.postimg.cc/658XbxZ8/IBM-logo-svg.png" alt="IBM">
+                <img src="https://i.postimg.cc/tgXvfFcB/Capgemini-201x-logo-svg.png" alt="Capgemini">
+                <img src="https://i.postimg.cc/Kvx94PGx/accenture.png" alt="accenture">
+                <img src="https://i.postimg.cc/6p0xy6J1/Oracle-1.webp" alt="Oracle">
+                <img src="https://i.postimg.cc/pLk3P0zw/images.jpg" alt="cognizant">
+                <img src="https://i.postimg.cc/90pYykmV/tcs-p-c.webp" alt="TCS">
+                <img src="https://i.postimg.cc/BvX74JqF/images.png" alt="DXC">
+                <img src="https://i.postimg.cc/nrt347qK/nvidia-logo-vert.png" alt="nvidia">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
+                <img src="https://i.postimg.cc/KvfMfLnG/Siemens-logo-768x432.png" alt="Siemens">
+                <img src="https://i.postimg.cc/yNQjbtcN/infosys-logo-png-original.png" alt="Infosys">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung">
+                <img src="https://i.postimg.cc/Wzjd6bzq/HP-Log-768x432.png" alt="Hp">
+                <img src="https://i.postimg.cc/c4SRX02m/Sony-logo-768x432.png" alt="Sony">
+            </div>
+        </div>
+       <footer class="wave-footer">
+        <style>
+.wave-footer {
+  background: linear-gradient(-45deg, #ffffff, #2C3E50, #000080, #ffffff);
+
+  background-size: 400% 400%;
+  animation: waveMotion 10s ease infinite;
+  padding: 40px;
+  font-family: sans-serif;
+  color: black;
+}
+
+@keyframes waveMotion {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+</style>
+
+
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+    
+    <!-- Logo and Address -->
+    <div style="flex: 1; min-width: 250px;">
+      <img src="https://i.postimg.cc/YCk8zbg6/new-company-logo.jpg" alt="Practsphere Logo" style="height: 50px; margin-bottom: 10px;" />
+      <p>
+        Prayagraj<br />
+        Uttar Pradesh 221102.<br />
+        <a href="mailto:support@practsphere.in">support@practsphere.in</a><br />
+        +91 63669 53507
+      </p>
+    </div>
+
+   
+    <!-- Quick Links -->
+    <div style="flex: 1; min-width: 350px;">
+            <strong style="font-size: 20px;">Practsphere Technologies</strong>
+
+      <ul style="list-style: none; padding: 0;">
+       <li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">About Us</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Careers</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Blog</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Contact Us</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Apply as Mentor</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Sign Up</a></li>
+
+      </ul>
+    </div>
+
+    <!-- Industries -->
+    <div style="flex: 1; min-width: 250px;">
+            <strong style="font-size: 20px;">Industries</strong>
+
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Information Technology</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Management</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Medical</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Civil</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Mechanical</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">ECE</a></li>
+
+      </ul>
+    </div>
+
+    <!-- Policies -->
+    <div style="flex: 1; min-width: 250px;">
+      <strong style="font-size: 20px;">Support</strong>
+
+      <ul style="list-style: none; padding: 0;">
+       <li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Privacy Policy</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Terms and Conditions</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">FAQ</a></li>
+<li style="margin-bottom: 8px;"><a href="#" style="text-decoration: none; color: inherit;">Payment and Refund Policy</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+<div style="text-align: center; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">
+  &copy; 2025 Practsphere Technologies. All rights reserved.
+</div>
+
+<!-- Razorpay Safe Payment Info -->
+<div style="text-align: center; margin-top: 20px;">
+  <span style="font-size: 14px;">&#169; 100% Safe and Secure Payment with</span><br />
+  <img src="https://i.postimg.cc/d1wYMzh5/razorpay.webp" alt="Razorpay Logo" style="height: 30px; margin-top: 10px;" />
+<img src="https://i.postimg.cc/YqJTKJVQ/Easebuzz-api-logo-1.png" alt="Easebuzz Logo" style="height: 30px; margin-top: 10px;" />
+<img src="https://i.postimg.cc/FzwCvLPh/paypal.webp" alt="Paypal Logo" style="height: 30px; margin-top: 10px;" />
+
+
+
+</div>
+</footer>
+
+
+    </footer>
+</body>
+</html>
